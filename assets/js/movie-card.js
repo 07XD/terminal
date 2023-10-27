@@ -71,10 +71,10 @@ export function createMovieCard(movie) {
     // Redirigir a la página de la película
     const slug = getSlug(movie.title);
     const movieId = movie.id;
-    window.location.href = `./movie/${movieId}-${slug}`;
+    window.location.href = `./movie.html?id=${movieId}-${slug}`;
     // hacer que se guarde el id de la pelicula en el local storage para ser usado en la pagina de detalle
     localStorage.setItem('movieId', movieId);
-    
+
 
   });
 

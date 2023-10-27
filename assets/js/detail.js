@@ -102,8 +102,11 @@ function getSlug(title) {
 }
 
 // Show the details of the selected movie
-const url = window.location.href;
-const movieId = url.split("/").pop().split("-")[0];
+
+// const url = window.location.href;
+// const movieId = url.split("/").pop().split("-")[0];
+const currentPage = new URL(window.location.href)
+const movieId = currentPage.searchParams.get("id")
 const movieDetailElement = document.querySelector('.movie-detail');
 
 const getGenres = function (genreList) {
