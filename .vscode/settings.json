@@ -1,0 +1,13 @@
+{
+  "[css]": {
+    "editor.formatOnSave": true
+  },
+  
+  "[html]": {
+    "editor.formatOnSave": true
+  },
+
+  "[javascript]": {
+    "editor.formatOnSave": true
+  }
+}
