@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Base de Datos de Películas</title>
+    <style>
+        :root {
+
+            /* Colores claros */
+            --primary-color: #101010;
+            --dark-color: #0a0a0a;
+            --light-color: #fff;
+            --black-transparent: rgba(0, 0, 0, 0.7);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --selection-text-color: #cfcfcf;
+            --selection-hover-color: #2e2e2e;
+            --scrollbar-background-color: transparent;
+            --scrollbar-thumb-color: #888;
+            --scrollbar-thumb-hover-color: #555;
+            --scrollbar-track-color: #333;
+            --border-neon-color: #0974f1;
+            --shadow-neon-color: rgba(9, 117, 241, 0.8);
+
+            /* Colores de texto */
+            --text-color: #fff;
+            --text-color-light: #aaa;
+            --text-color-lighter: #888;
+            --text-color-lightest: #666;
+            --text-color-dark: #333;
+
+
+            /* Tipografía */
+            --font-family: 'Roboto', sans-serif;
+            --font-zize-xsmall: 12px;
+            --font-size-small: 14px;
+            --font-size-normal: 16px;
+            --font-size-medium: 18px;
+            --font-size-large: 20px;
+            --font-size-xlarge: 24px;
+        }
+
+        /* Estilos generales */
+        body {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            font-size: var(--font-size-normal);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: var(--font-size-xlarge);
+            margin-bottom: 20px;
+            color: var(--light-color);
+        }
+
+        .peliculas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .pelicula {
+            position: relative;
+            background-color: var(--primary-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .pelicula img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .pelicula h2 {
+            font-size: var(--font-size-medium);
+            margin-bottom: 10px;
+            color: var(--light-color);
+        }
+
+        .pelicula .etiqueta {
+            color: var(--light-color);
+            font-size: var(--font-size-small);
+            font-weight: bold;
+        }
+
+        .pelicula .datos {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--black-transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            padding: 20px;
+            text-align: center;
+            overflow: auto;
+        }
+
+        .pelicula:hover .datos {
+            opacity: 1;
+        }
+
+        .pelicula .dato {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            color: var(--light-color);
+            font-size: var(--font-size-small);
+        }
+
+        .pelicula h3 {
+            font-size: var(--font-size-medium);
+            margin-bottom: 10px;
+            color: var(--light-color);
+        }
+
+        .pelicula .dato .etiqueta {
+            margin-right: 5px;
+            font-weight: bold;
+        }
+
+        .pelicula p {
+            margin: 10px 0;
+            color: var(--light-color);
+        }
+
+        .pelicula .descripcion {
+            font-size: var(--font-size-small);
+            margin: 10px 0;
+            color: var(--light-color);
+            text-align: justify;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            line-height: 1.3em;
+            max-height: 4.0em;
+            border: 1px solid var(--border-color);
+        }
+
+        .pelicula .info-adicional {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .pelicula .info-adicional .item {
+            flex: 1 0 auto;
+            padding: 5px 10px;
+            background-color: var(--primary-color);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: var(--font-size-small);
+            text-align: center;
+        }
+
+        .pelicula .info-adicional .item span {
+            font-weight: bold;
+        }
+
+        /* Estilos para la portada vertical */
+
+
+
+        /* Estilos para el scroll del hover */
+        .pelicula .datos {
+            padding: 20px;
+            text-align: justify;
+            overflow: auto;
+        }
+
+        .pelicula .datos::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .pelicula .datos::-webkit-scrollbar-track {
+            background: var(--scrollbar-track-color);
+        }
+
+        .pelicula .datos::-webkit-scrollbar-thumb {
+            background: var(--scrollbar-thumb-color);
+            border-radius: 5px;
+        }
+
+
+        .toggle-button {
+            margin-top: 20px;
+        }
+
+        .toggle-button button {
+            padding: 10px 20px;
+            font-size: var(--font-size-normal);
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Base de Datos de Películas</h1>
+        <div class="toggle-button">
+            <button onclick="togglePortada()">Mostrar Portada Vertical/Horizontal</button>
+        </div>
+        <div class="peliculas">
+            <!-- Aquí se generará dinámicamente el contenido de las películas -->
+        </div>
+
+    </div>
+    <script src="js/peliculas-script.js"></script>
+</body>
+
+</html>

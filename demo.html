@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mi Aplicación</title>
+  <script>
+    // Función para cambiar la URL y el contenido de la página
+    function navigateTo(section) {
+      const url = window.location.origin + '/#' + section;
+      const state = { section: section };
+      window.history.pushState(state, '', url);
+      updateContent(section);
+    }
+
+    // Función para actualizar el contenido de la página según la sección
+    function updateContent(section) {
+      const contentDiv = document.getElementById('content');
+      let content = '';
+
+      switch (section) {
+        case 'home':
+          content = '<h1>Bienvenido a la página de inicio</h1>';
+          break;
+        case 'movies':
+          content = '<h1>Películas populares</h1>';
+          break;
+        case 'contact':
+          content = '<h1>Contáctanos</h1>';
+          break;
+        default:
+          content = '<h1>Página no encontrada</h1>';
+      }
+
+      contentDiv.innerHTML = content;
+    }
+
+    // Función para manejar el evento 'popstate' y actualizar el contenido según el estado de la historia
+    window.addEventListener('popstate', function(event) {
+      const state = event.state;
+      const section = state ? state.section : 'home';
+      updateContent(section);
+    });
+  </script>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#" onclick="navigateTo('home')">Inicio</a></li>
+      <li><a href="#" onclick="navigateTo('movies')">Películas</a></li>
+      <li><a href="#" onclick="navigateTo('contact')">Contacto</a></li>
+    </ul>
+  </nav>
+  <div id="content">
+    <!-- Aquí se actualizará el contenido de la página -->
+  </div>
+</body>
+</html>

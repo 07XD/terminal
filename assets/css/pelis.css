@@ -1,0 +1,243 @@
+h1 {
+    font-size: var(--font-size-xlarge);
+    margin-bottom: 20px;
+    color: var(--light-color);
+}
+
+.peliculas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    grid-gap: 20px;
+}
+
+.pelicula {
+    position: relative;
+    background-color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.pelicula img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.pelicula h2 {
+    font-size: var(--font-size-small);
+    color: var(--light-color);
+}
+
+.pelicula .etiqueta {
+    color: var(--light-color);
+    font-size: var(--font-size-small);
+    font-weight: bold;
+}
+
+.pelicula .datos {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--black-transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    padding: 20px;
+    text-align: center;
+    overflow: auto;
+}
+
+.pelicula:hover .datos {
+    opacity: 1;
+}
+
+.pelicula .dato {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    color: var(--light-color);
+    font-size: var(--font-size-small);
+}
+
+.pelicula h3 {
+    font-size: var(--font-size-medium);
+    margin-bottom: 10px;
+    color: var(--light-color);
+}
+
+.pelicula .dato .etiqueta {
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.pelicula p {
+    margin: 10px 0;
+    color: var(--light-color);
+}
+
+.pelicula .descripcion {
+    font-size: var(--font-size-small);
+    margin: 10px 0;
+    color: var(--light-color);
+    text-align: justify;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-height: 1.3em;
+    max-height: 4.0em;
+    border: 1px solid var(--border-color);
+}
+
+.pelicula .info-adicional {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.pelicula .info-adicional .item {
+    flex: 1 0 auto;
+    padding: 5px 10px;
+    background-color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: var(--font-size-small);
+    text-align: center;
+}
+
+.pelicula .info-adicional .item span {
+    font-weight: bold;
+}
+
+/* Estilos para la portada vertical */
+
+
+
+/* Estilos para el scroll del hover */
+.pelicula .datos {
+    padding: 20px;
+    text-align: justify;
+    overflow: auto;
+}
+
+.pelicula .datos::-webkit-scrollbar {
+    width: 5px;
+}
+
+.pelicula .datos::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-color);
+}
+
+.pelicula .datos::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-color);
+    border-radius: 5px;
+}
+
+
+.toggle-button {
+    margin-top: 20px;
+}
+
+.toggle-button button {
+    padding: 10px 20px;
+    font-size: var(--font-size-normal);
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 421px) {
+    .peliculas {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)) !important;
+        grid-gap: 1px;
+    }
+
+    .pelicula {
+        padding: 0;
+        border-radius: 2px;
+        border: none;
+    }
+
+    .pelicula img {
+        width: 100%;
+        height: auto;
+        margin-bottom: -5px;
+        object-fit: cover;
+        border-radius: 2px;
+    }
+
+    .pelicula .dato {
+        display: none;
+    }
+
+    .pelicula h2 {
+        display: none;
+    }
+
+    .pelicula h3 {
+        font-size: var(--font-size-small);
+    }
+
+    .pelicula .datos {
+        padding: 10px;
+        overflow: hidden;
+    }
+
+    .pelicula .datos::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    .pelicula .datos::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .pelicula .datos::-webkit-scrollbar-thumb {
+        background: transparent;
+    }
+
+    .pelicula .descripcion {
+        display: none;
+    }
+
+    .pelicula .info-adicional {
+        display: none;
+    }
+
+    .pelicula .info-adicional .item {
+        padding: 5px;
+        font-size: var(--font-size-small);
+    }
+
+    .pelicula .info-adicional .item span {
+        font-weight: bold;
+    }
+
+    .pelicula .etiqueta {
+        display: none;
+    }
+
+    .pelicula .datos {
+        padding: 10px;
+        text-align: justify;
+        overflow: auto;
+    }
+
+}

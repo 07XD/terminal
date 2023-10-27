@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terminal</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="../tarjeta-peliculas/css/movie-card.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <div class="contenedor active">
+    <header>
+      <div class="logo">
+        <button id="boton-menu" class="boton-menu">
+          <li class='bx bx-menu'></i>
+        </button>
+        <h1>Terminal</h1>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar...">
+        <button>
+          <li class='bx bx-search'></li>
+        </button>
+        <div class="filtro">
+          <button>
+            <li class='bx bx-filter-alt'></li>
+            <span>Filtro</span>
+          </button>
+        </div>
+      </div>
+      <div class="user">
+        <img src="assets/img/user.jpg" alt="">
+      </div>
+    </header>
+    <div class="sidebar-container">
+      <aside class="sidebar-left">
+        <ul>
+          <li>
+            <a href="index.html" data-name="Inicio"><i class="bx bxs-home"></i>Inicio</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-user"></i>Perfil</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-chat"></i>Mensajes</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-bell"></i>Notificaciones</a>
+          </li>
+          <hr>
+          <li>
+            <a href="#"><i class="bx bx-message-square"></i>Foro</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-image"></i>Galería</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-video"></i>Videos</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-music"></i>Música</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-book"></i>Libros</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-file"></i>Documentos</a>
+          </li>
+          <hr>
+          <li>
+            <a href="#"><i class="bx bx-bookmark"></i>Guardados</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-collection"></i>Grupos</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-calendar"></i>Eventos</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-compass"></i>Explorar</a>
+          </li>
+          <hr>
+          <li>
+            <a href="#"><i class="bx bx-pie-chart-alt-2"></i>Estadísticas</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-cog"></i>Configuración</a>
+          </li>
+          <hr>
+          <li>
+            <a href="#"><i class="br bx bx-help-circle"></i>Ayuda</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bxs-info-square"></i>Acerca de</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-log-out"></i>Cerrar Sesión</a>
+          </li>
+        </ul>
+        <hr>
+        <div class="theme-switch-wrapper">
+          <div class="dark-light">
+            <div class="dark">
+              <i class="bx bxs-moon"></i>
+            </div>
+            <div class="light">
+              <i class="bx bx-sun"></i>
+            </div>
+          </div>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
+        </div>
+        <hr>
+        <div class="sidebar-footer">
+          <span>Terminal</span>
+          <p class="version">v1.0</p>
+        </div>
+      </aside>
+    </div>
+    <aside class="sidebar-slider-container">
+      <div class="sidebar-slider">
+        <ul>
+          <li>
+            <a href="index.html"><i class="bx bxs-home"></i>Inicio</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-user"></i>Perfil</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-chat"></i>Mensajes</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-bell"></i>Notificaciones</a>
+          </li>
+          <hr>
+          <li>
+            <a href="#"><i class="bx bx-message-square"></i>Foro</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-image"></i>Galería</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-video"></i>Videos</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-music"></i>Música</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-book"></i>Libros</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-file"></i>Documentos</a>
+          </li>
+          <hr>
+          <li>
+            <a href="#"><i class="bx bx-bookmark"></i>Guardados</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-collection"></i>Grupos</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-calendar"></i>Eventos</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-compass"></i>Explorar</a>
+          </li>
+          <hr>
+          <li>
+            <a href="#"><i class="bx bx-pie-chart-alt-2"></i>Estadísticas</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-cog"></i>Configuración</a>
+          </li>
+          <hr>
+          <li>
+            <a href="#"><i class="br bx bx-help-circle"></i>Ayuda</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bxs-info-square"></i>Acerca de</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-log-out"></i>Cerrar Sesión</a>
+          </li>
+        </ul>
+        <hr>
+        <div class="theme-switch-wrapper">
+          <div class="dark-light">
+            <div class="dark">
+              <i class="bx bxs-moon"></i>
+            </div>
+            <div class="light">
+              <i class="bx bx-sun"></i>
+            </div>
+          </div>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
+        </div>
+        <hr>
+        <div class="sidebar-footer">
+          <span>Terminal</span>
+          <p class="version">Alpha V.1.0</p>
+        </div>
+      </div>
+    </aside>
+    <main class="main">
+      <section>
+        <div class="container-movies">
+          <div class="movie-card" page-content>
+            
+          </div>
+         
+        </div>
+        
+
+      </section>
+    </main>
+    <aside id="sidebar-right">
+      <div class="ad-section">
+        <h2>Publicidad</h2>
+        <p>¡Compra nuestro producto ahora!</p>
+        <a href="#">Comprar</a>
+      </div>
+    </aside>
+  </div>
+  <!--<script src="../tarjeta-peliculas/script/movie-data.js"></script>-->
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/demo.js" type="module"></script>
+</body>
+</html>
